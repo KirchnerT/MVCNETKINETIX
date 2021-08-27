@@ -1,0 +1,103 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div id="divWrapper">
+    <div class="row form-group">
+        <h3 class="display-5" style="padding-top: 30px">Events Administration</h3>
+    </div>
+    <div class="row form-group">
+        <label class="col-form-label col-md-2" style="text-align: right" for="txtEventTitle">Event Title Contains </label>
+        <div class="col-md-3">
+            <input id="txtEventTitle" class="form-control" type="text" tabindex="1" />
+        </div>
+        <button id="btnAddEvent" style="position: absolute; right: 100px; background-color: green; color: white" type="submit">Add New Event</button>
+    </div>
+    <div class="row form-group">
+        <label class="col-form-label col-md-2" style="text-align: right" for="txtStartDateAfter">Start Date After </label>
+        <div class="col-md-2">
+            <input id="txtStartDateAfter" class="form-control" style="width: 70%" type="date" tabindex="1" />
+        </div>
+    </div>
+    <div class="row form-group">
+        <label class="col-form-label col-md-2" style="text-align: right" for="txtStartDateBefore">Start Date Before </label>
+        <div class="col-md-2">
+            <input id="txtStartDateBefore" class="form-control" style="width: 70%" type="date" tabindex="1" />
+        </div>
+        <button id="btnSearchEvents" type="submit" style="background-color: dodgerblue; color: white">Search Events</button>
+    </div>
+
+    <table style="border: 1px solid black; width: 100%" id="tableResults">
+        <thead>
+            <tr>
+                <th scope="col">Event Title</th>
+                <th scope="col">Event Start Date</th>
+                <th scope="col">Event Description</th>
+            </tr>
+        </thead>
+        <tbody id="tbodySearchResults">
+        </tbody>
+    </table>
+</div>
+
+<div id="eventModal" class="modal">
+    <div class="modal-content" style="margin-top: 2%">
+        <span class="close">&times;</span>
+        
+        <div class="row form-group">
+            <h3 class="display-5" style="padding-top: 30px; padding-left: 5%">Add/Edit Event</h3>
+        </div>
+        <div class="row form-group">
+            <label class="col-form-label col-md-2" style="text-align: right" for="txtModalEventTitle">Event Title * </label>
+            <div class="col-md-9">
+                <input id="txtModalEventTitle" class="form-control" type="text" tabindex="1" />
+            </div>
+        </div>
+        <div class="row form-group">
+            <label class="col-form-label col-md-2" style="text-align: right" for="txtModalStartDate">Start Date * </label>
+            <div class="col-md-3">
+                <input id="txtModalStartDate" class="form-control" style="width: 70%" type="date" tabindex="1" />
+            </div>
+        </div>
+        <div class="row form-group">
+            <label class="col-form-label col-md-2" style="text-align: right" for="txtModalEndDate">Start Date Before </label>
+            <div class="col-md-3">
+                <input id="txtModalEndDate" class="form-control" style="width: 70%" type="date" tabindex="1" />
+            </div>
+        </div>
+        <div class="row form-group">
+            <label class="col-form-label col-md-2" style="text-align: right" for="txtModalEventLocation">Event Location </label>
+            <div class="col-md-9">
+                <input id="txtModalEventLocation" class="form-control" type="text" tabindex="1" />
+            </div>
+        </div>
+        <div class="row form-group">
+            <label class="col-form-label col-md-2" style="text-align: right" for="txtModalEventDesc">Event Description </label>
+            <div class="col-md-9">
+                <textarea id="txtModalEventDesc" class="form-control" type="text" style="padding-bottom: 200px" tabindex="1"></textarea>
+            </div>
+        </div>
+        <div class="row form-group">
+            <label class="col-form-label col-md-2" style="text-align: right" for="txtModalEventUrl">Event ULR </label>
+            <div class="col-md-9">
+                <input id="txtModalEventUrl" class="form-control" type="text" tabindex="1" />
+            </div>
+        </div>
+        <div class="row form-group">
+
+            <div class="col-md-2 id-container" id="-1">
+
+            </div>
+            <div class="custom-control custom-checkbox col-md-3">
+                <input id="chkHideEvent" class="custom-control-input" type="checkbox" style="width: 15px; height: 15px" tabindex="1" />
+                <label class="custom-control-label" style="text-align: right" for="chkHideEvent"> Hide Event </label>
+            </div>
+        </div>
+        <div class="row form-group">
+            <button id="btnSaveEvent" tabindex="1" type="submit" style="background-color: green; color: white; margin-left: 18%">Save Event</button>
+            <button id="btnCancel" tabindex="1" type="submit" style="background-color: gray; color: black; margin-left: 2%">Cancel</button>
+        </div>
+    </div>
+</div>
+
+
